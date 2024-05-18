@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price House Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='LoginSignUpPage.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="background"></div>
+
+<div class="form-container">
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+    <form action="/signin" method="post">
+        <label for="signin-username">Username:</label>
+        <input type="text" id="signin-username" name="username" required>
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" name="password" required>
+        <button type="submit" id="signInButton">Sign In</button>
+
+        <hr class="separator">
+
+        <button type="button" id="createAccountButton" onclick="location.href='{{ url_for('signup') }}'">Create Account</button>
+    </form>
+</div>
+
+</body>
+</html>
